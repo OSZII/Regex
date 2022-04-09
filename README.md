@@ -59,6 +59,40 @@ ich hätte es mit z{2,100} gemacht, was aber falsch wäre, weil dann würde es n
 ![image](https://user-images.githubusercontent.com/46607383/162591686-ad0cae53-3efa-40d8-84b8-d8758fd1c00f.png)
 
 Aufgabe 8 "Optional Characters"
+Mit Fragezeichen ? kann man gewisse Zeichen als Optional kennzeichnen, also ob sie kein mal oder einmal vorkommen
+![image](https://user-images.githubusercontent.com/46607383/162591799-8df9ce54-5186-4fda-8c6a-f75a6c43fb6f.png)
+
+Aufgabe 9 "All this whitespace"
+Man kann auch leerzeichen (Spaces matchen) mit \s und mit \s+ beliebig viele whitespaces. Es gibt auch \n für Zeilenumbruch und \t für tab = 4 leerzeichen
+![image](https://user-images.githubusercontent.com/46607383/162591896-872b93f7-06f2-44c6-b2a5-148eadd49d40.png)
+
+Aufgabe 10 "Starting and Ending"
+Beispiel: man will nach dem Wort success in einem logfile suchen. Es wäre blöd wenn dann im Errorlog sowas steht: "Error unsuccessfull request"
+Somit würde das hier auch stimmen, deshalb gibt es eine Möglichkeit um dies zu spezifizieren
+Mit ^ vor dem Zeichen kann man sagen, dass die Zeile so anfangen muss und mit $ kann man sagen, dass die Zeile so enden muss
+![image](https://user-images.githubusercontent.com/46607383/162592045-6656009c-9d31-4dcb-a0d2-8947860a48ea.png)
+
+Aufgabe 11 "Match Groups"
+Man kann zum Beispiel aus .pdf Dateien mit () nur den Dateinamen heraußfiltern wie im Foto unterhalb gezeigt
+![image](https://user-images.githubusercontent.com/46607383/162592142-af8f6228-7fb9-4cc1-93e8-c5b9d01cb2d8.png)
+
+Aufgabe 12 "Nested Groups"
+Man kann mehrere Daten gleichzeitig herausfiltern
+![image](https://user-images.githubusercontent.com/46607383/162592248-df1e089e-0077-49c7-b456-1f21dc20c79b.png)
+
+Aufgabe 13 "More group Work"
+![image](https://user-images.githubusercontent.com/46607383/162592293-ae125305-6f48-4948-a8c4-1dfc022194a8.png)
+
+Aufgabe 14 "It's all conditional"
+Man kann bei Regex auch logische Verknüpfungen wie ODER (OR) verwenden dafür braucht man das Pipe-Symbol |
+![image](https://user-images.githubusercontent.com/46607383/162592364-950edb77-7367-412c-8bf1-193aa50fdcd7.png)
+
+Aufgabe 15 "Other special Characters"
+![image](https://user-images.githubusercontent.com/46607383/162592412-4cc70723-59f9-47f0-addb-2a83d4f5f6ab.png)
+
+So Fertig jetzt kann ich Regex EZZZZZZZZZZZZZ (^So.+)
+
+
 
 
 
