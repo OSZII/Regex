@@ -108,8 +108,8 @@ Auf den ersten Blick sieht man nicht sofort wo eine x-componente ein if oder ein
 Hier sehe ich nun direkt auf den ersten Blick wo sich was befindet es ist nur eine Frage der Zeit bis ich mir die Farben gemerkt habe!
 
 Das soll demonstrieren wie mächtig regex ist und was man alles damit machen kann. Nun aber zum regex:
-```
-// @error 
+```json
+        // @error 
         // @error('body')
         // @enderror
         "(@((end)?(error))(\\(.*\\))?)": [
