@@ -109,66 +109,41 @@ Hier sehe ich nun direkt auf den ersten Blick wo sich was befindet es ist nur ei
 
 Das soll demonstrieren wie mächtig regex ist und was man alles damit machen kann. Nun aber zum regex:
 ```json
-        // @error 
-        // @error('body')
-        // @enderror
-        "(@((end)?(error))(\\(.*\\))?)": [
+        "(@((end)?(error))(\\(.*\\))?)": [ // @error(irgendwas) @enderror
             {
                 "backgroundColor": "#ff4d4d",
                 "color": "white",
             }
         ],
-        // @foreach($users as $user)
-        // @foreach ($users as $user)
-        // @endforeach
-        "(@(end)?(foreach((\\s+)?\\(.*\\))?))": [
+        "(@(end)?(foreach((\\s+)?\\(.*\\))?))": [ // foreach beliebig spaces (irgendwas)
             {
                 "backgroundColor": "#68fc51",
                 "color": "black",
                 "fontWeight": "bold"
             }
         ],
-        // @if($user->isAdmin())
-        // @if ($user->isAdmin())
-        // @endif
-        // @else
-        // @auth
-        // @endauth
-        // @guest
-        // @endguest
-        "(@((end)?(if((\\s+)?\\(.*\\))?|auth|guest|else)))": [
+        "(@((end)?(if((\\s+)?\\(.*\\))?|auth|guest|else)))": [ // @if @endif @auth @endauth @guest @endguest @else
             {
                 "backgroundColor": "#51befc",
                 "color": "black",
                 "fontWeight": "bold"
             }
         ],
-        // @include('layouts.app')
-        // <x-comment/>
-        // </x-comment>
-        // <x-picture></x-picture>
-        // <x-picture>asdasd</x-picture>
-        "((@include\\(.*\\))|(<(/)?x-.+?>))": [
+        "((@include\\(.*\\))|(<(/)?x-.+?>))": [ // @include ( escaped irgendwas ) escaped oder </ slash optional x- bis zur nächsten spitzen klammer zur
             {
                 "backgroundColor": "#8451fc",
                 "color": "black",
                 "fontWeight": "bold"
             }
         ],
-        // jetzt noch eines für label und input tags
-        // <input>
-        // <input type="test"> asd
-        // </input>
-        // <input/>
-        "(<input|</input>)": [
+        "(<input|</input>)": [ // entweder <input oder </input> 
             {
                 "backgroundColor": "#ffcc00",
                 "color": "black",
                 "fontWeight": "bold"
             }
         ],
-        // {{ test }}
-        "({{\\s|\\s}})": [
+        "({{\\s|\\s}})": [ // zwei geschwungene Klammern auf/zu mit einem leerzeichen danach/davor, damit blade kommentare nicht zählen( {{--  --}} )
             {
                 "backgroundColor": "#a66646",
                 "color": "black",
@@ -177,3 +152,5 @@ Das soll demonstrieren wie mächtig regex ist und was man alles damit machen kan
             }
         ],
 ```
+Zum debuggen habe ich kommentare verwendet, dass sah dann so aus:
+![image](https://user-images.githubusercontent.com/46607383/169698302-5481a1f9-0515-4224-a8e2-3453769bebfe.png)
