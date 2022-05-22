@@ -1,7 +1,3 @@
-<style>
-  *{scroll-behavior: "smooth"}  
-</style>
-
 # Regex
 
 ## Was ist Regex?
@@ -100,4 +96,84 @@ So Fertig jetzt kann ich Regex EZZZZZZZZZZZZZ (^So.+)
 
 ## <a name="advancedRegex">Advanced Regex</a>
 
+Ich habe ein bisschen Laravel programmiert und nach ner Zeit fält es einem schwer if foreach oder die componenten die importiert werden schwer zu erkennen. Daraufhin habe ich nach ner Möglichkeit gesucht diese so zu markieren, dass ich es schneller finde. Der code sah so aus:
+![image](https://user-images.githubusercontent.com/46607383/169697877-76933542-f3c9-4ddd-b1c9-c9871256090b.png)
+![image](https://user-images.githubusercontent.com/46607383/169697886-1ba26662-3c21-4ea5-b767-d76e74eecfc2.png)
 
+Auf den ersten Blick sieht man nicht sofort wo eine x-componente ein if oder eine for loop ist. Glücklicherweise gibt es ein plugin unter vscode namens Highlight welches mit regex code markieren und stylen kann. Der style ist web css also funktioniert es wie in einer web app. Es sah danach so aus:
+![image](https://user-images.githubusercontent.com/46607383/169698076-8be42996-7c09-4909-99a4-f45e4d23b588.png)
+![image](https://user-images.githubusercontent.com/46607383/169698109-7a9d8b7d-f002-40da-a938-92cc4369a460.png)
+![image](https://user-images.githubusercontent.com/46607383/169698133-1ba34cea-3ba8-4daa-b750-d25e7c3ae8c1.png)
+
+Hier sehe ich nun direkt auf den ersten Blick wo sich was befindet es ist nur eine Frage der Zeit bis ich mir die Farben gemerkt habe!
+
+Das soll demonstrieren wie mächtig regex ist und was man alles damit machen kann. Nun aber zum regex:
+```
+// @error 
+        // @error('body')
+        // @enderror
+        "(@((end)?(error))(\\(.*\\))?)": [
+            {
+                "backgroundColor": "#ff4d4d",
+                "color": "white",
+            }
+        ],
+        // @foreach($users as $user)
+        // @foreach ($users as $user)
+        // @endforeach
+        "(@(end)?(foreach((\\s+)?\\(.*\\))?))": [
+            {
+                "backgroundColor": "#68fc51",
+                "color": "black",
+                "fontWeight": "bold"
+            }
+        ],
+        // @if($user->isAdmin())
+        // @if ($user->isAdmin())
+        // @endif
+        // @else
+        // @auth
+        // @endauth
+        // @guest
+        // @endguest
+        "(@((end)?(if((\\s+)?\\(.*\\))?|auth|guest|else)))": [
+            {
+                "backgroundColor": "#51befc",
+                "color": "black",
+                "fontWeight": "bold"
+            }
+        ],
+        // @include('layouts.app')
+        // <x-comment/>
+        // </x-comment>
+        // <x-picture></x-picture>
+        // <x-picture>asdasd</x-picture>
+        "((@include\\(.*\\))|(<(/)?x-.+?>))": [
+            {
+                "backgroundColor": "#8451fc",
+                "color": "black",
+                "fontWeight": "bold"
+            }
+        ],
+        // jetzt noch eines für label und input tags
+        // <input>
+        // <input type="test"> asd
+        // </input>
+        // <input/>
+        "(<input|</input>)": [
+            {
+                "backgroundColor": "#ffcc00",
+                "color": "black",
+                "fontWeight": "bold"
+            }
+        ],
+        // {{ test }}
+        "({{\\s|\\s}})": [
+            {
+                "backgroundColor": "#a66646",
+                "color": "black",
+                "fontWeight": "bold",
+                
+            }
+        ],
+```
