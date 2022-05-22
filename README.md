@@ -1,3 +1,7 @@
+<style>
+  *{scroll-behavior: "smooth"}  
+</style>
+
 # Regex
 
 ## Was ist Regex?
